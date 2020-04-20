@@ -1,0 +1,218 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: auto;
+}
+
+#app {
+  font-family: "PingFang SC","等线";
+  text-align: center;
+  color: #2c3e50;
+  margin: 0 auto;
+  width: 75%;
+
+  box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
+  background-color: #ecf5ff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  height: 80vh;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#app:hover h2 {
+  background-position: 0 0;
+}
+
+.el-header,
+.el-footer {
+  background-color: #a0cfff;
+  color: #000;
+  text-align: center;
+  line-height: 60px;
+
+  font-size: 18px;
+}
+
+#gradientText {
+  color: #474e51;
+}
+
+#gradientText:hover {
+  animation: swingHorizontal 1s ease;
+  animation-iteration-count: 1;
+}
+
+.el-main {
+  background-color: rgba(223, 228, 234,0)!important;
+  color: #333;
+  text-align: center;
+  line-height: 160px;
+  transition: 1s;
+  height: 100%!important;
+}
+
+.el-main:hover {
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.el-row {
+  /* margin-bottom: 20px; */
+  line-height: 64px;
+}
+
+.el-col {
+  border-radius: 4px;
+}
+
+.bg-purple:hover {
+  transition: 0.5s;
+}
+
+.grid-content {
+  border-radius: 4px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#_component {
+  animation: fade 1s;
+}
+
+.taps {
+  display: flex !important;
+  margin-bottom: 2%!important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background-color: rgba(223, 228, 234,0.5)!important;
+}
+
+.tap {
+  flex: 1;
+  font-size: 16px;
+}
+
+.tap:hover {
+  background: #fff !important;
+}
+
+.input-select {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 50% !important;
+}
+
+.input-button {
+  color: #4b9beb !important;
+}
+
+#NeiVei {
+  position: absolute;
+  transform: translate(8%, -16%);
+  z-index: 99;
+  color: transparent;
+  transition-duration: 0.3s;
+  background: linear-gradient(to right, #17a57f 0%, #0525a3 50%, transparent 50%) 100% 0 / 200% 200% #474e51;
+  background-clip: text;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#NeiVei::before,
+#NeiVei::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #5878f3;
+  transition: transform 0.2s ease-in-out;
+}
+
+#NeiVei::before {
+  top: 0;
+  transform: translateX(-100%);
+}
+
+#NeiVei::after {
+  bottom: 0;
+  transform: translateX(100%);
+}
+
+#NeiVei:hover::after,
+#NeiVei:hover::before {
+  transform: translateX(0);
+}
+
+.confirmButtonClass {
+  transform: scale(1.28);
+  background-color: #5778f3;
+  padding: 10px 30px;
+  color: #fff;
+  border-radius: 5px;
+  border-bottom: 4px solid #3e4caf;
+  transition: 0.2s;
+}
+
+.confirmButtonClass:hover {
+  border-bottom-width: 0;
+}
+
+#all {
+  width: 100%;
+  height: 100%;
+}
+
+.el-container{
+  height: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  #app {
+    height: 100% !important;
+    width: 100% !important;
+    text-align: center;
+    font-size: 14px !important;
+  }
+  .el-main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .taps {
+    box-shadow: none !important;
+  }
+  .tap {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .input-select {
+    width: 70% !important;
+    position: absolute !important;
+    transform: translate(-40%, 30%) !important;
+    z-index: 99 !important;
+  }
+  h2 {
+    /* display: none; */
+  }
+  #_component {
+    width: 85% !important;
+    margin: 0 auto;
+  }
+  .customClass {
+    width: 100vw !important;
+  }
+  #NeiVei {
+    transform: translate(8%, -12%) !important;
+  }
+}

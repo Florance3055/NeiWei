@@ -1,0 +1,69 @@
+.col_1:first-child div {
+  background-color: transparent !important;
+  color: #888;
+  cursor: pointer;
+}
+
+.el-row {
+  line-height: 48px;
+}
+
+.el-col {
+  border-radius: 4px;
+}
+
+.bg-purple:hover {
+  background: #a0cfff;
+}
+
+.grid-content {
+  border-radius: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.el-row:hover span {
+  opacity: 1;
+  transform: translateX(32px);
+}
+
+span {
+  position: absolute;
+  left: 0;
+  transition: 0.5s;
+  opacity: 0;
+  color: #a0cfff;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 992px) {
+  .el-row {
+    padding-bottom: 1px;
+    color: #a4c6dd;
+    position: relative;
+  }
+  .el-row::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #a4c6dd;
+  }
+  span {
+    display: none;
+  }
+  .bg-purple:hover {
+    background: transparent !important;
+  }
+  .col_1:first-child div {
+    background-color: #e7ebf0 !important;
+    color: #000;
+    cursor: pointer;
+  }
+}
