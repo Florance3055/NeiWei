@@ -4,6 +4,8 @@ body {
   width: 100vw !important;
   height: 100vh !important;
   overflow: auto;
+  background-image: url(https://v1.alapi.cn/api/bing);
+  
 }
 
 #app {
@@ -24,6 +26,7 @@ body {
   text-align: center;
   font-size: 16px;
   font-weight: 500;
+  opacity: 0.9;
 }
 
 #app:hover h2 {
@@ -174,8 +177,30 @@ body {
   height: 100%;
 }
 
+#all:hover #app{
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+}
+
+#talk:hover{
+  opacity: 1!important;
+}
+
+#app:hover {
+  opacity: 0.9!important;
+}
+
 .el-container{
   height: 100%;
+}
+
+#talk{
+  width: 100vw;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  background-color: #fff;
+  margin: 0;
 }
 
 @media screen and (max-width: 992px) {
@@ -215,4 +240,5 @@ body {
   #NeiVei {
     transform: translate(8%, -12%) !important;
   }
+
 }

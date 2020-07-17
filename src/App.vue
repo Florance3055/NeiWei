@@ -1,7 +1,9 @@
 <template >
   <div id="all" ref="all">
     <div id="app" v-title data-title="NeiVei" ref="app">
-      <h2 id="NeiVei" @click="openWindow">NeiVei</h2>
+      <el-tooltip class="item" effect="light" content="点击切换主题" placement="top">
+        <h2 id="NeiVei" @click="submitInfo">NeiVei</h2>
+      </el-tooltip>
       <el-container>
         <el-header>
           <el-form @submit.native.prevent>
@@ -38,6 +40,9 @@
         </el-main>
       </el-container>
     </div>
+
+    <!-- <h2 id="talk" ref="talk">{{famous.author}}{{famous.content}}</h2>-->
+    <h2 id="talk" ref="talk">{{soup}}</h2> 
   </div>
 </template>
 
@@ -49,10 +54,12 @@ export default {
       currentDate: new Date(),
       activeIndex: "/",
       search: "",
-      params: {
-        name: "",
-        info: ""
-      }
+      famous: {
+        author: "",
+        content: ""
+      },
+      soup: "",
+      bgFlag: false
     };
   },
   created() {
@@ -71,17 +78,28 @@ export default {
     } else if (this.$route.path === "/") {
       this.activeIndex = "/";
     }
+
+    // this.getFamous();
+    this.getSoup();
+    setTimeout(() => {
+      this.$refs.talk.style.cssText =
+        "opacity: 0;transition: ease-in-out 0.5s;";
+    }, 5000);
   },
   mounted() {
     var hour = new Date().getHours();
     var deg = Math.floor(Math.random() * 360).toString();
     console.log(hour + "点");
     if (hour >= 18 || hour < 6) {
+      this.bgFlag = true;
       console.log("入夜");
-      this.$refs.all.style.cssText = "background-color: #202124!important";
+      // this.$refs.all.style.cssText = "background-color: #202124!important";
       this.$refs.app.style.cssText =
-        "filter:  hue-rotate(" + deg + "deg) saturate(100%) invert(100%);";
+        "filter:  hue-rotate(" +
+        deg +
+        "deg) saturate(100%) invert(100%);";
     } else {
+      this.bgFlag = false;
       console.log("浮白");
       this.$refs.app.style.cssText =
         "filter:  hue-rotate(" + deg + "deg) saturate(100%);";
@@ -97,11 +115,29 @@ export default {
       this.search = "";
     },
     submitInfo() {
+      this.bgFlag = !this.bgFlag;
+      if (this.bgFlag) {
+        var hour = new Date().getHours();
+        var deg = Math.floor(Math.random() * 360).toString();
+        console.log(hour + "点");
+        console.log("入夜");
+        // this.$refs.all.style.cssText = "background-color: #202124!important";
+        this.$refs.app.style.cssText =
+          "filter:  hue-rotate(" + deg + "deg) saturate(100%) invert(100%);";
+      } else {
+        console.log("浮白");
+        this.$refs.app.style.cssText =
+          "filter:  hue-rotate(" + deg + "deg) saturate(100%);";
+      }
+    },
+    getFamous() {
       this.$http
-        .post("http://47.240.80.23/server.php", this.params)
+        .get("https://v1.alapi.cn/api/mingyan?typeid=40")
         .then(
           response => {
-            console.log(response);
+            // console.log(response.data.data);
+            this.famous = response.data.data;
+            this.famous.author += "：";
           },
           err => {
             console.log(err);
@@ -111,33 +147,49 @@ export default {
           console.log(error);
         });
     },
-    openWindow() {
-      this.$prompt("你有什么想对我说的🐴？", "提示", {
-        confirmButtonText: "确认",
-        cancelButtonText: "取消",
-        center: true,
-        showCancelButton: false,
-        confirmButtonClass: "confirmButtonClass",
-        customClass: "customClass",
-        showClose: false
-      })
-        .then(({ value }) => {
-          this.$message({
-            type: "success",
-            message: "感谢您的评论！"
-          });
-          if (value) {
-            this.params.info = value;
-            this.submitInfo();
+    getSoup() {
+      this.$http
+        .get("https://v1.alapi.cn/api/soul")
+        .then(
+          response => {
+            this.soup = response.data.data.title;
+          },
+          err => {
+            console.log(err);
           }
-        })
-        .catch(() => {
-          this.$message({
-            type: "info",
-            message: "取消"
-          });
+        )
+        .catch(error => {
+          console.log(error);
         });
     }
+    // openWindow() {
+    //   this.submitInfo()
+    //   this.$prompt("你有什么想对我说的🐴？", "提示", {
+    //     confirmButtonText: "确认",
+    //     cancelButtonText: "取消",
+    //     center: true,
+    //     showCancelButton: false,
+    //     confirmButtonClass: "confirmButtonClass",
+    //     customClass: "customClass",
+    //     showClose: false
+    //   })
+    //     .then(({ value }) => {
+    //       this.$message({
+    //         type: "success",
+    //         message: "感谢您的评论！"
+    //       });
+    //       if (value) {
+    //         this.params.info = value;
+    //         this.submitInfo();
+    //       }
+    //     })
+    //     .catch(() => {
+    //       this.$message({
+    //         type: "info",
+    //         message: "取消"
+    //       });
+    //     });
+    // }
   }
 };
 </script>

@@ -152,7 +152,7 @@ export default {
     return {
       row_1: [
         {
-          name: "技术"
+          name: "自由"
         },
         {
           name: "阿里云",
@@ -186,7 +186,7 @@ export default {
       ],
       row_2: [
         {
-          name: "娱乐"
+          name: "勇敢"
         },
         {
           name: "斗鱼",
@@ -197,29 +197,29 @@ export default {
           url: "https://movie.douban.com/top250"
         },
         {
-          name: "6vhao.tv",
-          url: "http://www.6vhao.tv/"
+          name: "字幕库",
+          url: "http://www.zimuku.la/"
         },
         {
           name: "音范丝",
           url: "http://www.yinfans.me/"
         },
         {
-          name: "Youtube",
-          url: "https://www.youtube.com/"
+          name: "超星云盘",
+          url: "http://pan-yz.chaoxing.com/"
         },
         {
-          name: "片源网",
-          url: "http://pianyuan.la/"
+          name: "聚合BT",
+          url: "https://jubt.cf/cn/index.html"
         },
-        {
-          name: "字幕下载",
-          url: "http://www.yinfans.me/%e5%ad%97%e5%b9%95%e4%b8%8b%e8%bd%bd"
-        }
+                {
+          name: "健康提交",
+          url: "http://ijg.xujc.com/app/213"
+        },
       ],
       row_3: [
         {
-          name: "软件"
+          name: "真诚"
         },
         {
           name: "吾爱破解",
@@ -252,7 +252,7 @@ export default {
       ],
       row_4: [
         {
-          name: "动漫"
+          name: "善良"
         },
         {
           name: "Bilibili",
@@ -285,7 +285,7 @@ export default {
       ],
       row_5: [
         {
-          name: "资讯"
+          name: "温柔"
         },
         {
           name: "果汁排行",
@@ -318,7 +318,7 @@ export default {
       ],
       row_6: [
         {
-          name: "工具"
+          name: "坚强"
         },
         {
           name: "Gtranslate",
@@ -351,7 +351,7 @@ export default {
       ],
       row_7: [
         {
-          name: "校务"
+          name: "独立"
         },
         {
           name: "教务系统",
@@ -384,7 +384,7 @@ export default {
       ],
       row_8: [
         {
-          name: "图像"
+          name: "上进"
         },
         {
           name: "wallpaper",

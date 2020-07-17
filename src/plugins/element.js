@@ -14,6 +14,7 @@ import {
   Main,
   MessageBox,
   Message,
+  Tooltip
 } from 'element-ui';
 
 
@@ -29,6 +30,7 @@ Vue.use(Col);
 Vue.use(Container);
 Vue.use(Header);
 Vue.use(Main);
+Vue.use(Tooltip);
 
 Vue.prototype.$msgbox = MessageBox;
 Vue.prototype.$confirm = MessageBox.confirm;
