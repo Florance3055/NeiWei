@@ -5,11 +5,11 @@ body {
   height: 100vh !important;
   overflow: auto;
   background-image: url(https://v1.alapi.cn/api/bing);
-  
+
 }
 
 #app {
-  font-family: "PingFang SC","等线";
+  font-family: "PingFang SC", "等线";
   text-align: center;
   color: #2c3e50;
   margin: 0 auto;
@@ -53,12 +53,12 @@ body {
 }
 
 .el-main {
-  background-color: rgba(223, 228, 234,0)!important;
+  background-color: rgba(223, 228, 234, 0) !important;
   color: #333;
   text-align: center;
   line-height: 160px;
   transition: 1s;
-  height: 100%!important;
+  height: 100% !important;
 }
 
 .el-main:hover {
@@ -86,6 +86,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -93,13 +94,15 @@ body {
 
 #_component {
   animation: fade 1s;
+  top: 60px;
+  bottom: 0;
 }
 
 .taps {
   display: flex !important;
-  margin-bottom: 2%!important;
+  margin-bottom: 2% !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  background-color: rgba(223, 228, 234,0.5)!important;
+  background-color: rgba(223, 228, 234, 0.5) !important;
 }
 
 .tap {
@@ -118,11 +121,12 @@ body {
 
 .input-button {
   color: #4b9beb !important;
+  /* border: 1px solid white; */
 }
 
 #NeiVei {
   position: absolute;
-  transform: translate(8%, -16%);
+  transform: translate(12%, -32%);
   z-index: 99;
   color: transparent;
   transition-duration: 0.3s;
@@ -177,30 +181,34 @@ body {
   height: 100%;
 }
 
-#all:hover #app{
+#all:hover #app {
   opacity: 0;
   transition: ease-in-out 0.3s;
 }
 
-#talk:hover{
-  opacity: 1!important;
+#talk:hover {
+  opacity: 1 !important;
 }
 
 #app:hover {
-  opacity: 0.9!important;
+  opacity: 0.9 !important;
 }
 
-.el-container{
+.el-container {
   height: 100%;
 }
 
-#talk{
+#talk {
   width: 100vw;
   position: absolute;
   text-align: center;
   bottom: 0;
   background-color: #fff;
   margin: 0;
+}
+
+.jsoneditor-vue{
+  height: 100%;
 }
 
 @media screen and (max-width: 992px) {
@@ -210,35 +218,73 @@ body {
     text-align: center;
     font-size: 14px !important;
   }
+
   .el-main {
     margin: 0 !important;
     padding: 0 !important;
   }
+
   .taps {
     box-shadow: none !important;
   }
+
   .tap {
     margin: 0 !important;
     padding: 0 !important;
   }
+
   .input-select {
     width: 70% !important;
     position: absolute !important;
     transform: translate(-40%, 30%) !important;
     z-index: 99 !important;
   }
+
   h2 {
     /* display: none; */
   }
+
   #_component {
     width: 85% !important;
     margin: 0 auto;
   }
+
   .customClass {
     width: 100vw !important;
   }
+
   #NeiVei {
     transform: translate(8%, -12%) !important;
   }
 
+  #card {
+    width: 100% !important;
+    height: 100vh!important;
+    margin: 0 auto;
+  }
+
+}
+
+.text {
+  font-size: 14px;
+}
+
+.item {
+  padding: 18px 0;
+}
+
+.box-card {
+  width: 960px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+
+}
+
+#card {
+  display: none;
+  animation: fade 1s;
 }

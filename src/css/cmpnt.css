@@ -5,7 +5,7 @@
 }
 
 .el-row {
-  line-height: 48px;
+  /* line-height: 48px; */
 }
 
 .el-col {
@@ -66,4 +66,8 @@ a {
     color: #000;
     cursor: pointer;
   }
+}
+
+#cpnt{
+  /* height: 100%!important; */
 }
